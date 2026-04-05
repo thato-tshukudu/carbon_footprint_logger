@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { FaLeaf, FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa';
+import { FaLeaf, FaEnvelope, FaLock, FaSignInAlt, FaArrowLeft } from 'react-icons/fa';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -91,6 +91,15 @@ export default function SignIn() {
             )}
           </button>
         </form>
+        <div className="mt-4">
+          <Link
+            href="/"
+            className="flex w-full items-center justify-center gap-2 rounded-full border border-[#5a744e] bg-[#e5ede0] py-3 text-sm font-semibold uppercase tracking-wide text-[#2d3929] transition hover:bg-[#cfdcc7]"
+          >
+            <FaArrowLeft />
+            <span>Back to Home</span>
+          </Link>
+        </div>
         <div className="mt-6 text-center text-sm text-[var(--muted-text)]">
           <p>
             Don&apos;t have an account?{' '}
