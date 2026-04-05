@@ -1,6 +1,6 @@
 # Carbon Emissions Tracker
 
-![Carbon Tracker Dashboard](public/carbon_tracker.png)
+![Carbon Tracker Dashboard](public/carbon_tracker.png?v=latest)
 
 A web platform that lets users track daily activities contributing to carbon emissions, view summaries, and get tips to reduce their footprint.
 
