@@ -1,22 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carbon Emissions Tracker
+
+A web platform that lets users track daily activities contributing to carbon emissions, view summaries, and get tips to reduce their footprint.
+
+## Features
+
+- **Activity Logging**: Select or input daily activities with CO₂ values, running totals, visual summaries, and filtering by category while keeping the latest entries in localStorage if the live services are unreachable.
+- **User Accounts & Dashboard**: Registration and login with MongoDB storage, personalized activity logs, total emissions summary, and community average comparison.
+- **Insight Engine**: Analyze user activity for highest-emission categories, provide personalized tips and weekly goals.
+
+## Tech Stack
+
+- Frontend: React with Next.js App Router, Tailwind CSS
+- Backend: Next.js API Routes, MongoDB with Mongoose
+- Authentication: NextAuth.js
+- Charts: Recharts
+- Styling: Professional dark green palette with emerald highlights and resilient borders
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
+2. Set up MongoDB:
+   - Ensure MongoDB is running locally on `mongodb://localhost:27017/carbontracker`
+   - Or update `MONGODB_URI` in `.env.local` for a different connection
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Environment Variables
+
+Create `.env.local` from the example template:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then set values in `.env.local`:
+```
+MONGODB_URI=mongodb://localhost:27017/carbontracker
+NEXTAUTH_SECRET=your-secret-key
+NEXTAUTH_URL=http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+
+- `app/`: Next.js app directory with pages and API routes
+- `components/`: Reusable React components
+- `lib/`: Database models, utilities, and data
+- `public/`: Static assets
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
